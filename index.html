@@ -1,0 +1,1729 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UC10 - A Alfândega do Brasil e o Comércio Exterior</title>
+  <meta name="description" content="Atividade EAD da UC10 sobre a função estratégica da Alfândega do Brasil no Comércio Exterior.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --senac-blue: #003b71;
+      --senac-blue-dark: #002b52;
+      --senac-orange: #f7941d;
+      --page-bg: #f4f7fb;
+      --text-main: #333333;
+      --muted: #667085;
+      --line: #d9e2ef;
+      --soft-blue: #e8f2fc;
+      --soft-orange: #fff3e2;
+      --soft-green: #eaf7ef;
+      --soft-red: #fff0ef;
+      --white: #ffffff;
+      --shadow: 0 14px 34px rgba(0, 43, 82, 0.10);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--text-main);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--senac-blue);
+    }
+
+    a:hover {
+      color: var(--senac-blue-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--senac-orange);
+      outline-offset: 3px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 82vh;
+      display: flex;
+      align-items: end;
+      color: var(--white);
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0, 43, 82, 0.94) 0%, rgba(0, 59, 113, 0.78) 46%, rgba(0, 43, 82, 0.36) 100%),
+        url("assets/alfandega-hero.png") center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 100px;
+      background: linear-gradient(180deg, rgba(244, 247, 251, 0), var(--page-bg));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 72px 0 92px;
+    }
+
+    .course-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      color: #f8fbff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      margin: 0;
+      font-size: clamp(2.35rem, 4.6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 22px 0 0;
+      color: #edf5ff;
+      font-size: clamp(1.05rem, 1.5vw, 1.32rem);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .topic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    main {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-band {
+      padding: 64px 0;
+    }
+
+    .section-band.alt {
+      background: #ffffff;
+    }
+
+    .section-title {
+      max-width: 880px;
+      margin-bottom: 26px;
+    }
+
+    .section-title .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--senac-orange);
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .section-title h2 {
+      margin: 8px 0 10px;
+      color: var(--senac-blue-dark);
+      font-size: clamp(1.75rem, 2.5vw, 2.55rem);
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .intro-card,
+    .info-card,
+    .material-card,
+    .objective-card,
+    .criterion-card,
+    .answer-panel,
+    .flow-step {
+      height: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-card {
+      padding: 28px;
+    }
+
+    .support-note {
+      border-left: 5px solid var(--senac-orange);
+      border-radius: 8px;
+      background: var(--soft-orange);
+      padding: 18px 20px;
+      color: #583509;
+      font-weight: 700;
+    }
+
+    .official-alert {
+      border: 1px solid #bfd8ef;
+      border-left: 5px solid var(--senac-blue);
+      border-radius: 8px;
+      background: var(--soft-blue);
+      padding: 18px 20px;
+      color: #153d5e;
+    }
+
+    .nav-panel {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+    }
+
+    .internal-nav {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: thin;
+    }
+
+    .internal-nav a {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 13px;
+      background: #ffffff;
+      color: var(--senac-blue-dark);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .internal-nav a:hover,
+    .internal-nav a:focus-visible {
+      border-color: var(--senac-orange);
+      background: var(--soft-orange);
+      color: var(--senac-blue-dark);
+    }
+
+    .material-card,
+    .info-card,
+    .objective-card,
+    .criterion-card {
+      padding: 22px;
+    }
+
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      background: var(--soft-blue);
+      color: var(--senac-blue);
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .material-type {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--soft-blue);
+      color: var(--senac-blue-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .material-card h3,
+    .info-card h3,
+    .objective-card h3,
+    .criterion-card h3,
+    .answer-panel h3 {
+      color: var(--senac-blue-dark);
+      font-size: 1.12rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .material-card p,
+    .info-card p,
+    .objective-card p,
+    .criterion-card p {
+      margin-bottom: 18px;
+      color: #4e5d6c;
+    }
+
+    .btn-senac {
+      --bs-btn-bg: var(--senac-orange);
+      --bs-btn-border-color: var(--senac-orange);
+      --bs-btn-color: #1f2b36;
+      --bs-btn-hover-bg: #df7f08;
+      --bs-btn-hover-border-color: #df7f08;
+      --bs-btn-hover-color: #101820;
+      --bs-btn-focus-shadow-rgb: 247, 148, 29;
+      font-weight: 800;
+    }
+
+    .btn-outline-senac {
+      --bs-btn-color: var(--senac-blue);
+      --bs-btn-border-color: var(--senac-blue);
+      --bs-btn-hover-bg: var(--senac-blue);
+      --bs-btn-hover-border-color: var(--senac-blue);
+      --bs-btn-hover-color: #ffffff;
+      --bs-btn-focus-shadow-rgb: 0, 59, 113;
+      font-weight: 800;
+    }
+
+    .btn-ghost {
+      --bs-btn-color: var(--senac-blue-dark);
+      --bs-btn-bg: #ffffff;
+      --bs-btn-border-color: var(--line);
+      --bs-btn-hover-bg: var(--soft-blue);
+      --bs-btn-hover-border-color: #bad4ea;
+      --bs-btn-hover-color: var(--senac-blue-dark);
+      font-weight: 800;
+    }
+
+    .dimension-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0;
+      margin: 20px 0 0;
+      list-style: none;
+    }
+
+    .dimension-list li {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 14px 16px;
+    }
+
+    .dimension-list strong {
+      display: block;
+      color: var(--senac-blue-dark);
+    }
+
+    .risk-list {
+      columns: 2;
+      column-gap: 28px;
+      padding-left: 1.2rem;
+    }
+
+    .risk-list li {
+      break-inside: avoid;
+      margin-bottom: 7px;
+    }
+
+    .accordion {
+      --bs-accordion-border-color: var(--line);
+      --bs-accordion-border-radius: 8px;
+      --bs-accordion-inner-border-radius: 8px;
+      --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(247, 148, 29, 0.28);
+      --bs-accordion-active-bg: var(--soft-blue);
+      --bs-accordion-active-color: var(--senac-blue-dark);
+    }
+
+    .accordion-button {
+      font-weight: 800;
+      color: var(--senac-blue-dark);
+    }
+
+    .table {
+      vertical-align: middle;
+    }
+
+    .table thead th {
+      background: var(--senac-blue-dark);
+      color: #ffffff;
+      border-color: var(--senac-blue-dark);
+      font-size: 0.92rem;
+    }
+
+    .table tbody th {
+      color: var(--senac-blue-dark);
+      font-weight: 800;
+    }
+
+    .answer-panel {
+      padding: 24px;
+    }
+
+    .question-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .question-card legend {
+      float: none;
+      width: auto;
+      margin-bottom: 14px;
+      color: var(--senac-blue-dark);
+      font-size: 1.04rem;
+      font-weight: 800;
+    }
+
+    .question-card .form-check {
+      margin-bottom: 10px;
+      padding-left: 2rem;
+    }
+
+    .question-card .form-check-input {
+      margin-left: -2rem;
+    }
+
+    .form-label {
+      color: var(--senac-blue-dark);
+      font-weight: 800;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      border-color: #c8d6e5;
+      border-radius: 8px;
+      resize: vertical;
+    }
+
+    textarea.form-control:focus {
+      border-color: var(--senac-orange);
+      box-shadow: 0 0 0 0.25rem rgba(247, 148, 29, 0.24);
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: steps;
+    }
+
+    .flow-step {
+      position: relative;
+      padding: 18px 16px 16px;
+      box-shadow: none;
+      counter-increment: steps;
+    }
+
+    .flow-step::before {
+      content: counter(steps);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: var(--senac-orange);
+      color: #1f2b36;
+      font-weight: 900;
+      font-size: 0.88rem;
+    }
+
+    .flow-step strong {
+      display: block;
+      color: var(--senac-blue-dark);
+      line-height: 1.35;
+    }
+
+    .flow-step span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .activity-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .status-message {
+      min-height: 24px;
+      margin: 0;
+      color: #146c43;
+      font-weight: 800;
+    }
+
+    .references {
+      font-size: 0.94rem;
+    }
+
+    .references li {
+      margin-bottom: 10px;
+    }
+
+    .footer-close {
+      background: var(--senac-blue-dark);
+      color: #ffffff;
+      padding: 44px 0;
+    }
+
+    .footer-close p {
+      margin: 0;
+      color: #edf5ff;
+      font-size: 1.08rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .hero {
+        min-height: 76vh;
+        background-position: center;
+      }
+
+      .dimension-list,
+      .flow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 56px 0 78px;
+      }
+
+      .section-band {
+        padding: 44px 0;
+      }
+
+      .intro-card,
+      .answer-panel,
+      .material-card,
+      .info-card,
+      .objective-card,
+      .criterion-card {
+        padding: 18px;
+      }
+
+      .dimension-list,
+      .flow-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .risk-list {
+        columns: 1;
+      }
+
+      .activity-actions {
+        align-items: stretch;
+      }
+
+      .action-buttons,
+      .action-buttons .btn,
+      .activity-actions {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      .nav-panel,
+      .activity-actions,
+      .btn,
+      .hero::after {
+        display: none !important;
+      }
+
+      body {
+        background: #ffffff;
+      }
+
+      .hero {
+        min-height: auto;
+        background: var(--senac-blue-dark) !important;
+        color: #ffffff !important;
+      }
+
+      .hero-content {
+        padding: 28px 0;
+      }
+
+      .section-band {
+        padding: 22px 0;
+      }
+
+      .intro-card,
+      .info-card,
+      .material-card,
+      .objective-card,
+      .criterion-card,
+      .answer-panel,
+      .flow-step {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <div class="container">
+        <span class="course-kicker">UC10 • Comércio Exterior</span>
+        <h1>A Alfândega do Brasil e sua função estratégica no Comércio Exterior</h1>
+        <p>Compreenda como a alfândega atua na fiscalização, controle, tributação e segurança das operações de importação e exportação, protegendo a economia nacional e contribuindo para um comércio exterior justo, seguro e eficiente.</p>
+        <div class="badge-row" aria-label="Temas da atividade">
+          <span class="topic-badge">Atividade EAD</span>
+          <span class="topic-badge">Controle aduaneiro</span>
+          <span class="topic-badge">Fiscalização de mercadorias</span>
+          <span class="topic-badge">Órgãos anuentes</span>
+          <span class="topic-badge">Comércio exterior</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-band pt-5" aria-labelledby="apresentacao-title">
+      <div class="container">
+        <div class="intro-card">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <div class="section-title mb-3">
+                <span class="eyebrow">Apresentação</span>
+                <h2 id="apresentacao-title">Como esta atividade está organizada</h2>
+              </div>
+              <p>Nesta atividade, você irá estudar o papel da alfândega brasileira no comércio exterior, compreendendo sua importância para a fiscalização das mercadorias que entram e saem do país, a arrecadação de tributos, a proteção da economia nacional e a segurança da sociedade.</p>
+              <p class="mb-0">Você também irá analisar a atuação dos principais órgãos responsáveis pelo controle aduaneiro e refletir sobre os desafios contemporâneos relacionados à globalização, tecnologia, inovação logística e comércio internacional.</p>
+            </div>
+            <div class="col-lg-4">
+              <div class="support-note">
+                Leia os conteúdos, assista aos vídeos indicados, consulte as fontes oficiais e responda às questões com base nos materiais de apoio.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band alt" aria-labelledby="materiais-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Materiais de apoio</span>
+          <h2 id="materiais-title">Estude com vídeos, aula EAD e fontes oficiais</h2>
+          <p>Os materiais abaixo servem como apoio para ampliar sua compreensão. Em temas de comércio exterior, procedimentos e regras podem mudar. Por isso, priorize sempre fontes oficiais, como Receita Federal e Portal Único Siscomex.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3">
+            <article class="material-card">
+              <span class="material-type">Vídeo</span>
+              <h3>Vídeo da aula — Função da Alfândega</h3>
+              <p>Assista ao vídeo para compreender as principais funções da alfândega e os órgãos responsáveis pelo controle aduaneiro.</p>
+              <!-- Docente: altere o link abaixo se houver atualização do vídeo oficial da aula. -->
+              <a class="btn btn-senac" href="https://www.youtube.com/watch?v=dcRcxStlD2E" target="_blank" rel="noopener noreferrer">Acessar vídeo</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="material-card">
+              <span class="material-type">Vídeo</span>
+              <h3>Controle aduaneiro na prática</h3>
+              <p>Use este vídeo como apoio para revisar fiscalização, conferência documental e atuação dos agentes envolvidos.</p>
+              <a class="btn btn-senac" href="https://www.youtube.com/watch?v=yiFLByjY7RQ" target="_blank" rel="noopener noreferrer">Acessar vídeo</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="material-card">
+              <span class="material-type">Vídeo</span>
+              <h3>Comércio exterior e órgãos anuentes</h3>
+              <p>Material complementar para relacionar operação internacional, exigências legais e controle por tipo de mercadoria.</p>
+              <a class="btn btn-senac" href="https://www.youtube.com/watch?v=Ig5v4Bh1Rsg" target="_blank" rel="noopener noreferrer">Acessar vídeo</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="material-card">
+              <span class="material-type">Aula EAD</span>
+              <h3>Aula EAD Senac</h3>
+              <p>Acesse o recurso indicado pelo docente para complementar o estudo da Unidade Curricular 10.</p>
+              <a class="btn btn-senac" href="https://ga.sp.senac.br/html/frame.html?idRecurso=20530" target="_blank" rel="noopener noreferrer">Acessar aula</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="material-card">
+              <span class="material-type">Leitura oficial</span>
+              <h3>Receita Federal — Aduana e Comércio Exterior</h3>
+              <p>Portal oficial com informações sobre aduana, importação, exportação, viajantes, remessas e regimes aduaneiros.</p>
+              <a class="btn btn-outline-senac" href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior" target="_blank" rel="noopener noreferrer">Acessar material</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="material-card">
+              <span class="material-type">Leitura oficial</span>
+              <h3>Receita Federal — Controle Aduaneiro</h3>
+              <p>Referência para compreender o controle exercido sobre veículos, cargas, mercadorias, bagagens e remessas internacionais.</p>
+              <a class="btn btn-outline-senac" href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/despacho-de-importacao/topicos-1/conceitos-e-definicoes/controle-aduaneiro" target="_blank" rel="noopener noreferrer">Acessar material</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="material-card">
+              <span class="material-type">Leitura complementar</span>
+              <h3>Portal Único Siscomex</h3>
+              <p>Ambiente oficial de integração das operações de comércio exterior entre governo e operadores privados.</p>
+              <a class="btn btn-outline-senac" href="https://www.gov.br/siscomex/pt-br" target="_blank" rel="noopener noreferrer">Acessar material</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band" aria-labelledby="fontes-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Fontes oficiais</span>
+          <h2 id="fontes-title">Consulta prioritária para regras e procedimentos</h2>
+          <p>Em comércio exterior, procedimentos podem mudar. Por isso, sempre consulte fontes oficiais como Receita Federal e Portal Único Siscomex antes de confirmar regras, exigências, sistemas e procedimentos operacionais.</p>
+        </div>
+        <div class="official-alert mb-4">
+          Use os links oficiais para validar conceitos, sistemas, anuências, etapas de despacho e orientações operacionais atualizadas.
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="info-card">
+              <span class="card-icon">RF</span>
+              <h3>Aduana e Comércio Exterior</h3>
+              <p>Base oficial para consultas sobre temas aduaneiros e operações internacionais.</p>
+              <a href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="info-card">
+              <span class="card-icon">CA</span>
+              <h3>Controle Aduaneiro</h3>
+              <p>Conceitos e definições relacionados ao controle exercido pela administração aduaneira.</p>
+              <a href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/despacho-de-importacao/topicos-1/conceitos-e-definicoes/controle-aduaneiro" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="info-card">
+              <span class="card-icon">SX</span>
+              <h3>Portal Único Siscomex</h3>
+              <p>Integração de sistemas, registros e acompanhamento de operações de comércio exterior.</p>
+              <a href="https://www.gov.br/siscomex/pt-br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="info-card">
+              <span class="card-icon">DI</span>
+              <h3>Despacho de Importação</h3>
+              <p>Manual oficial da Receita Federal sobre etapas, conceitos e procedimentos de importação.</p>
+              <a href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/despacho-de-importacao" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="info-card">
+              <span class="card-icon">DU</span>
+              <h3>Exportação no Portal Único</h3>
+              <p>Manual oficial sobre procedimentos de exportação no Portal Único de Comércio Exterior.</p>
+              <a href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/exportacao-portal-unico" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="nav-panel" aria-label="Menu interno da atividade">
+      <div class="container">
+        <div class="internal-nav">
+          <a href="#introducao">Introdução</a>
+          <a href="#funcoes">Funções da alfândega</a>
+          <a href="#orgaos">Órgãos responsáveis</a>
+          <a href="#questoes">Questões</a>
+          <a href="#estudo-caso">Estudo de caso</a>
+          <a href="#mapa">Atividade prática</a>
+          <a href="#entrega">Entrega</a>
+          <a href="#avaliacao">Avaliação</a>
+        </div>
+      </div>
+    </nav>
+
+    <section id="introducao" class="section-band alt" aria-labelledby="introducao-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Introdução</span>
+          <h2 id="introducao-title">Alfândega, controle e proteção das operações internacionais</h2>
+          <p>A alfândega é uma estrutura essencial para o controle das operações de comércio exterior. Ela atua na fiscalização de mercadorias que entram e saem do território nacional, contribuindo para a legalidade das operações, arrecadação de tributos, proteção da economia e segurança da sociedade.</p>
+        </div>
+
+        <h3 class="h5 fw-bold text-primary-emphasis">Dimensões da atuação aduaneira</h3>
+        <ul class="dimension-list">
+          <li><strong>Fiscal</strong> Cobrança e controle dos tributos incidentes nas operações internacionais.</li>
+          <li><strong>Econômica</strong> Proteção da economia nacional contra práticas irregulares.</li>
+          <li><strong>Aduaneira</strong> Conferência, controle e liberação de mercadorias.</li>
+          <li><strong>Sanitária e ambiental</strong> Apoio ao controle de produtos sujeitos à fiscalização específica.</li>
+          <li><strong>Segurança pública</strong> Combate a ilícitos, contrabando, descaminho e fraudes.</li>
+          <li><strong>Comercial e logística</strong> Organização do fluxo internacional de mercadorias.</li>
+        </ul>
+
+        <div class="mt-5">
+          <h3 class="h5 fw-bold text-primary-emphasis">Impactos de falhas no controle aduaneiro</h3>
+          <ul class="risk-list">
+            <li>Atrasos na liberação de mercadorias.</li>
+            <li>Multas e penalidades.</li>
+            <li>Retenção ou apreensão de cargas.</li>
+            <li>Prejuízos para importadores e exportadores.</li>
+            <li>Riscos sanitários, ambientais ou de segurança.</li>
+            <li>Perda de arrecadação tributária.</li>
+            <li>Concorrência desleal.</li>
+            <li>Impactos negativos na imagem da empresa.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band" aria-labelledby="objetivos-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Objetivos de aprendizagem</span>
+          <h2 id="objetivos-title">O que você deverá demonstrar ao final</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3">
+            <article class="objective-card">
+              <span class="card-icon">1</span>
+              <h3>Reconhecer funções</h3>
+              <p>Reconhecer as principais funções da alfândega no comércio exterior.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="objective-card">
+              <span class="card-icon">2</span>
+              <h3>Identificar órgãos</h3>
+              <p>Identificar os órgãos responsáveis pelo controle aduaneiro brasileiro.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="objective-card">
+              <span class="card-icon">3</span>
+              <h3>Relacionar dimensões</h3>
+              <p>Relacionar fiscalização, tributação, segurança e proteção econômica.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="objective-card">
+              <span class="card-icon">4</span>
+              <h3>Analisar riscos</h3>
+              <p>Analisar desafios e riscos envolvidos nas operações aduaneiras.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="funcoes" class="section-band alt" aria-labelledby="funcoes-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Funções da alfândega</span>
+          <h2 id="funcoes-title">Funções estratégicas da alfândega</h2>
+          <p>A alfândega não atua apenas como barreira burocrática. Sua função é estratégica porque conecta interesses econômicos, fiscais, sanitários, ambientais, logísticos, comerciais e de segurança nacional.</p>
+        </div>
+
+        <div class="accordion" id="accordionFuncoes">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#funcaoFiscalizacao" aria-expanded="true" aria-controls="funcaoFiscalizacao">
+                A) Fiscalização de mercadorias
+              </button>
+            </h3>
+            <div id="funcaoFiscalizacao" class="accordion-collapse collapse show" data-bs-parent="#accordionFuncoes">
+              <div class="accordion-body">
+                A alfândega fiscaliza mercadorias que entram e saem do território nacional, verificando documentos, informações declaradas, classificação fiscal, origem, quantidade, valor, peso e conformidade com a legislação.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#funcaoTributos" aria-expanded="false" aria-controls="funcaoTributos">
+                B) Arrecadação de tributos
+              </button>
+            </h3>
+            <div id="funcaoTributos" class="accordion-collapse collapse" data-bs-parent="#accordionFuncoes">
+              <div class="accordion-body">
+                Nas operações de comércio exterior, a alfândega contribui para a arrecadação de tributos incidentes sobre importações e exportações, quando aplicável. Essa função é importante para o financiamento do Estado e para o equilíbrio das relações comerciais.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#funcaoEconomia" aria-expanded="false" aria-controls="funcaoEconomia">
+                C) Proteção da economia nacional
+              </button>
+            </h3>
+            <div id="funcaoEconomia" class="accordion-collapse collapse" data-bs-parent="#accordionFuncoes">
+              <div class="accordion-body">
+                A atuação aduaneira ajuda a combater práticas irregulares que podem prejudicar empresas nacionais, como subfaturamento, falsa declaração de origem, contrabando, descaminho e importações em desacordo com normas técnicas ou legais.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#funcaoSeguranca" aria-expanded="false" aria-controls="funcaoSeguranca">
+                D) Segurança da sociedade
+              </button>
+            </h3>
+            <div id="funcaoSeguranca" class="accordion-collapse collapse" data-bs-parent="#accordionFuncoes">
+              <div class="accordion-body">
+                A alfândega também contribui para impedir a entrada ou saída irregular de produtos proibidos, perigosos ou sujeitos a controle especial, apoiando a proteção da saúde, do meio ambiente, da segurança pública e dos consumidores.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#funcaoFacilitacao" aria-expanded="false" aria-controls="funcaoFacilitacao">
+                E) Facilitação do comércio exterior
+              </button>
+            </h3>
+            <div id="funcaoFacilitacao" class="accordion-collapse collapse" data-bs-parent="#accordionFuncoes">
+              <div class="accordion-body">
+                Além de fiscalizar, o sistema aduaneiro também busca tornar o comércio exterior mais eficiente por meio da modernização de processos, uso de tecnologia, integração de sistemas e atuação baseada em gestão de riscos.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#funcaoNormas" aria-expanded="false" aria-controls="funcaoNormas">
+                F) Cumprimento de normas internacionais
+              </button>
+            </h3>
+            <div id="funcaoNormas" class="accordion-collapse collapse" data-bs-parent="#accordionFuncoes">
+              <div class="accordion-body">
+                As operações internacionais seguem acordos, normas e padrões que exigem controle, rastreabilidade e transparência. A alfândega contribui para que o país cumpra suas obrigações no comércio internacional.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="orgaos" class="section-band" aria-labelledby="orgaos-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Órgãos responsáveis</span>
+          <h2 id="orgaos-title">Órgãos e agentes do controle aduaneiro</h2>
+          <p>O controle aduaneiro envolve fiscalização documental, física, tributária, administrativa e regulatória, com atuação coordenada entre governo e operadores privados.</p>
+        </div>
+
+        <div class="accordion" id="accordionOrgaos">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#orgaoReceita" aria-expanded="true" aria-controls="orgaoReceita">
+                Receita Federal do Brasil
+              </button>
+            </h3>
+            <div id="orgaoReceita" class="accordion-collapse collapse show" data-bs-parent="#accordionOrgaos">
+              <div class="accordion-body">
+                É o principal órgão responsável pela administração aduaneira no Brasil. Atua no controle, fiscalização, conferência, tributação e liberação de mercadorias nas operações de importação e exportação.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orgaoSiscomex" aria-expanded="false" aria-controls="orgaoSiscomex">
+                Portal Único Siscomex
+              </button>
+            </h3>
+            <div id="orgaoSiscomex" class="accordion-collapse collapse" data-bs-parent="#accordionOrgaos">
+              <div class="accordion-body">
+                É o ambiente integrado utilizado para registrar, acompanhar e controlar operações de comércio exterior, promovendo integração entre governo e operadores privados.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orgaoAnuentes" aria-expanded="false" aria-controls="orgaoAnuentes">
+                Órgãos anuentes
+              </button>
+            </h3>
+            <div id="orgaoAnuentes" class="accordion-collapse collapse" data-bs-parent="#accordionOrgaos">
+              <div class="accordion-body">
+                São órgãos que analisam e autorizam determinadas operações de importação ou exportação conforme o tipo de mercadoria, risco, finalidade ou exigência legal.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orgaoMapa" aria-expanded="false" aria-controls="orgaoMapa">
+                MAPA
+              </button>
+            </h3>
+            <div id="orgaoMapa" class="accordion-collapse collapse" data-bs-parent="#accordionOrgaos">
+              <div class="accordion-body">
+                Atua no controle de produtos agropecuários, alimentos, bebidas, produtos de origem animal e vegetal e itens sujeitos à fiscalização agropecuária.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orgaoAnvisa" aria-expanded="false" aria-controls="orgaoAnvisa">
+                Anvisa
+              </button>
+            </h3>
+            <div id="orgaoAnvisa" class="accordion-collapse collapse" data-bs-parent="#accordionOrgaos">
+              <div class="accordion-body">
+                Atua no controle sanitário de produtos como medicamentos, cosméticos, alimentos, produtos para saúde, saneantes e outros itens sujeitos à vigilância sanitária.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orgaoIbama" aria-expanded="false" aria-controls="orgaoIbama">
+                Ibama
+              </button>
+            </h3>
+            <div id="orgaoIbama" class="accordion-collapse collapse" data-bs-parent="#accordionOrgaos">
+              <div class="accordion-body">
+                Atua em operações que envolvem produtos sujeitos ao controle ambiental, fauna, flora, resíduos, madeira, substâncias controladas ou itens com impacto ambiental.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orgaoInmetro" aria-expanded="false" aria-controls="orgaoInmetro">
+                Inmetro
+              </button>
+            </h3>
+            <div id="orgaoInmetro" class="accordion-collapse collapse" data-bs-parent="#accordionOrgaos">
+              <div class="accordion-body">
+                Pode atuar na verificação de conformidade técnica, qualidade, segurança e regulamentação de determinados produtos.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orgaoBacen" aria-expanded="false" aria-controls="orgaoBacen">
+                Banco Central do Brasil
+              </button>
+            </h3>
+            <div id="orgaoBacen" class="accordion-collapse collapse" data-bs-parent="#accordionOrgaos">
+              <div class="accordion-body">
+                Relaciona-se ao controle cambial e financeiro das operações internacionais, especialmente nos pagamentos e recebimentos em moeda estrangeira.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orgaoDespachante" aria-expanded="false" aria-controls="orgaoDespachante">
+                Despachante aduaneiro
+              </button>
+            </h3>
+            <div id="orgaoDespachante" class="accordion-collapse collapse" data-bs-parent="#accordionOrgaos">
+              <div class="accordion-body">
+                Profissional que representa importadores e exportadores na execução de procedimentos aduaneiros, conferência documental, registros em sistemas e acompanhamento do despacho.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5" aria-labelledby="tabela-title">
+          <div class="section-title">
+            <span class="eyebrow">Quadro comparativo</span>
+            <h2 id="tabela-title">Função, órgão e etapa do controle aduaneiro</h2>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">Elemento</th>
+                  <th scope="col">Tipo de atuação</th>
+                  <th scope="col">Finalidade</th>
+                  <th scope="col">Etapa da operação</th>
+                  <th scope="col">Risco em caso de falha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Receita Federal</th>
+                  <td>Fiscal, aduaneira e tributária</td>
+                  <td>Controlar, fiscalizar, conferir e liberar mercadorias.</td>
+                  <td>Despacho, conferência e desembaraço.</td>
+                  <td>Atraso no desembaraço, multas ou falha na arrecadação.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Portal Único Siscomex</th>
+                  <td>Sistêmica e documental</td>
+                  <td>Registrar, integrar e acompanhar operações.</td>
+                  <td>Registro e acompanhamento da operação.</td>
+                  <td>Inconsistência documental ou bloqueio operacional.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Órgãos anuentes</th>
+                  <td>Administrativa e regulatória</td>
+                  <td>Analisar produtos sujeitos a controles específicos.</td>
+                  <td>Licenciamento, autorização ou análise prévia.</td>
+                  <td>Indeferimento de licença ou retenção da mercadoria.</td>
+                </tr>
+                <tr>
+                  <th scope="row">MAPA</th>
+                  <td>Agropecuária</td>
+                  <td>Controlar produtos vegetais, animais, alimentos e bebidas.</td>
+                  <td>Anuência e fiscalização específica.</td>
+                  <td>Risco sanitário, retenção ou devolução da carga.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Anvisa</th>
+                  <td>Sanitária</td>
+                  <td>Controlar produtos sujeitos à vigilância sanitária.</td>
+                  <td>Anuência e inspeção sanitária.</td>
+                  <td>Entrada de produto irregular ou risco à saúde.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ibama</th>
+                  <td>Ambiental</td>
+                  <td>Controlar produtos com impacto ambiental ou sujeitos a restrição.</td>
+                  <td>Anuência ambiental e conferência de exigências.</td>
+                  <td>Risco ambiental, multa ou apreensão.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Inmetro</th>
+                  <td>Técnica e regulatória</td>
+                  <td>Verificar conformidade, qualidade e segurança.</td>
+                  <td>Análise técnica ou certificação aplicável.</td>
+                  <td>Entrada de produto sem conformidade técnica.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Banco Central</th>
+                  <td>Cambial e financeira</td>
+                  <td>Apoiar controles relacionados a pagamentos internacionais.</td>
+                  <td>Pagamento, recebimento e registro financeiro.</td>
+                  <td>Problemas cambiais ou inconsistência financeira.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Despachante aduaneiro</th>
+                  <td>Operacional e documental</td>
+                  <td>Representar a empresa nos procedimentos aduaneiros.</td>
+                  <td>Preparação, registro e acompanhamento.</td>
+                  <td>Erro de registro, atraso ou exigência documental.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Importador/exportador</th>
+                  <td>Comercial e legal</td>
+                  <td>Garantir informações corretas e cumprimento das exigências.</td>
+                  <td>Planejamento, contratação, registro e entrega.</td>
+                  <td>Multas, custos extras e prejuízo comercial.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="questoes" class="section-band alt" aria-labelledby="questoes-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Parte A e B</span>
+          <h2 id="questoes-title">Questões da atividade</h2>
+          <p>Responda com linguagem profissional, usando os conteúdos da atividade, os vídeos e as fontes oficiais como apoio.</p>
+        </div>
+
+        <div class="answer-panel mb-5">
+          <h3>Parte A — Questões dissertativas</h3>
+          <div class="mb-4">
+            <label class="form-label" for="discursiva1">Questão 1</label>
+            <p>Explique a importância da alfândega brasileira para o comércio exterior, considerando fiscalização, arrecadação tributária, segurança pública e proteção da economia nacional.</p>
+            <p class="text-secondary">Na resposta, relacione a atuação da alfândega com pelo menos três aspectos: controle de mercadorias, combate a irregularidades, recolhimento de tributos, proteção do mercado interno, segurança da sociedade ou cumprimento de normas internacionais.</p>
+            <textarea class="form-control" id="discursiva1" data-save="textarea" placeholder="Digite sua resposta da Questão 1."></textarea>
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="discursiva2">Questão 2</label>
+            <p>Analise como a atuação da Receita Federal e dos órgãos anuentes contribui para a legalidade e segurança das operações de importação e exportação.</p>
+            <p class="text-secondary">Considere exemplos de mercadorias que podem exigir controle sanitário, ambiental, agropecuário, técnico ou administrativo.</p>
+            <textarea class="form-control" id="discursiva2" data-save="textarea" placeholder="Digite sua resposta da Questão 2."></textarea>
+          </div>
+          <div>
+            <label class="form-label" for="discursiva3">Questão 3</label>
+            <p>Explique os principais desafios enfrentados pela alfândega diante da globalização, do crescimento do comércio eletrônico internacional e do uso de novas tecnologias na logística.</p>
+            <p class="text-secondary">Considere volume de operações, velocidade das entregas, risco de fraudes, fiscalização documental, uso de sistemas digitais e gestão de riscos.</p>
+            <textarea class="form-control" id="discursiva3" data-save="textarea" placeholder="Digite sua resposta da Questão 3."></textarea>
+          </div>
+        </div>
+
+        <div class="answer-panel">
+          <h3>Parte B — Questões objetivas</h3>
+          <div class="row g-4 mt-1">
+            <div class="col-lg-6">
+              <fieldset class="question-card">
+                <legend>1. Qual alternativa apresenta a principal função da alfândega?</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj1" id="qObj1A" value="A" data-save="radio">
+                  <label class="form-check-label" for="qObj1A">A) Fiscalizar e controlar a entrada e saída de mercadorias do território nacional.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj1" id="qObj1B" value="B" data-save="radio">
+                  <label class="form-check-label" for="qObj1B">B) Definir o preço de venda dos produtos importados no mercado interno.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj1" id="qObj1C" value="C" data-save="radio">
+                  <label class="form-check-label" for="qObj1C">C) Contratar o transporte internacional em nome das empresas.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj1" id="qObj1D" value="D" data-save="radio">
+                  <label class="form-check-label" for="qObj1D">D) Substituir o importador na negociação com fornecedores estrangeiros.</label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset class="question-card">
+                <legend>2. Qual é o órgão central do controle aduaneiro no Brasil?</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj2" id="qObj2A" value="A" data-save="radio">
+                  <label class="form-check-label" for="qObj2A">A) Banco Central do Brasil.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj2" id="qObj2B" value="B" data-save="radio">
+                  <label class="form-check-label" for="qObj2B">B) Receita Federal do Brasil.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj2" id="qObj2C" value="C" data-save="radio">
+                  <label class="form-check-label" for="qObj2C">C) Junta Comercial do estado.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj2" id="qObj2D" value="D" data-save="radio">
+                  <label class="form-check-label" for="qObj2D">D) Câmara de Comércio Internacional.</label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset class="question-card">
+                <legend>3. Qual é a finalidade dos órgãos anuentes?</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj3" id="qObj3A" value="A" data-save="radio">
+                  <label class="form-check-label" for="qObj3A">A) Emitir nota fiscal nacional para todas as operações internacionais.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj3" id="qObj3B" value="B" data-save="radio">
+                  <label class="form-check-label" for="qObj3B">B) Definir a rota marítima obrigatória de cada carga.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj3" id="qObj3C" value="C" data-save="radio">
+                  <label class="form-check-label" for="qObj3C">C) Analisar e autorizar operações sujeitas a controles específicos.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj3" id="qObj3D" value="D" data-save="radio">
+                  <label class="form-check-label" for="qObj3D">D) Armazenar fisicamente todas as mercadorias importadas.</label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset class="question-card">
+                <legend>4. Como a alfândega se relaciona com a arrecadação tributária?</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj4" id="qObj4A" value="A" data-save="radio">
+                  <label class="form-check-label" for="qObj4A">A) Verifica e controla tributos incidentes nas operações de comércio exterior.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj4" id="qObj4B" value="B" data-save="radio">
+                  <label class="form-check-label" for="qObj4B">B) Define a margem de lucro dos importadores.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj4" id="qObj4C" value="C" data-save="radio">
+                  <label class="form-check-label" for="qObj4C">C) Substitui o pagamento internacional entre comprador e vendedor.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj4" id="qObj4D" value="D" data-save="radio">
+                  <label class="form-check-label" for="qObj4D">D) Isenta automaticamente qualquer operação de importação.</label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset class="question-card">
+                <legend>5. Qual pode ser uma consequência de irregularidade aduaneira?</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj5" id="qObj5A" value="A" data-save="radio">
+                  <label class="form-check-label" for="qObj5A">A) Liberação automática da mercadoria sem conferência.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj5" id="qObj5B" value="B" data-save="radio">
+                  <label class="form-check-label" for="qObj5B">B) Retenção da mercadoria, multa ou atraso na liberação.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj5" id="qObj5C" value="C" data-save="radio">
+                  <label class="form-check-label" for="qObj5C">C) Redução obrigatória de todos os custos logísticos.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj5" id="qObj5D" value="D" data-save="radio">
+                  <label class="form-check-label" for="qObj5D">D) Transferência da responsabilidade para o consumidor final.</label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset class="question-card">
+                <legend>6. Qual é o papel da tecnologia e da gestão de riscos no controle aduaneiro?</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj6" id="qObj6A" value="A" data-save="radio">
+                  <label class="form-check-label" for="qObj6A">A) Eliminar todos os documentos das operações internacionais.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj6" id="qObj6B" value="B" data-save="radio">
+                  <label class="form-check-label" for="qObj6B">B) Impedir que exportadores acompanhem suas operações.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj6" id="qObj6C" value="C" data-save="radio">
+                  <label class="form-check-label" for="qObj6C">C) Substituir todos os órgãos anuentes por empresas privadas.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="qObj6" id="qObj6D" value="D" data-save="radio">
+                  <label class="form-check-label" for="qObj6D">D) Apoiar a integração de dados, a gestão de riscos e a fiscalização mais eficiente.</label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="estudo-caso" class="section-band" aria-labelledby="estudo-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Estudo de caso</span>
+          <h2 id="estudo-title">Mercadoria retida na alfândega</h2>
+        </div>
+
+        <div class="intro-card mb-4">
+          <p>A empresa brasileira Beta Importações Ltda. realizou a importação de equipamentos eletrônicos para revenda no mercado nacional. Durante o processo de conferência aduaneira, foram identificadas divergências entre os documentos apresentados e as informações registradas no sistema. Além disso, parte dos produtos pode estar sujeita à análise de conformidade técnica e autorização de órgão anuente.</p>
+          <p class="mb-0">A carga está em recinto alfandegado e a empresa precisa regularizar a situação para evitar atrasos, custos extras de armazenagem e possíveis penalidades.</p>
+        </div>
+
+        <div class="answer-panel">
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <label class="form-label" for="caso1">1. Qual é o papel da alfândega nessa situação?</label>
+              <textarea class="form-control" id="caso1" data-save="textarea" placeholder="Relacione fiscalização, conferência documental e liberação da mercadoria."></textarea>
+            </div>
+            <div class="col-lg-6">
+              <label class="form-label" for="caso2">2. Quais riscos a empresa pode enfrentar caso as divergências não sejam corrigidas?</label>
+              <textarea class="form-control" id="caso2" data-save="textarea" placeholder="Indique riscos operacionais, financeiros e regulatórios."></textarea>
+            </div>
+            <div class="col-lg-6">
+              <label class="form-label" for="caso3">3. Quais órgãos ou agentes podem participar da análise e regularização da operação?</label>
+              <textarea class="form-control" id="caso3" data-save="textarea" placeholder="Cite Receita Federal, órgãos anuentes, despachante e demais agentes aplicáveis."></textarea>
+            </div>
+            <div class="col-lg-6">
+              <label class="form-label" for="caso4">4. Que cuidados a empresa deveria ter adotado antes do embarque da mercadoria?</label>
+              <textarea class="form-control" id="caso4" data-save="textarea" placeholder="Considere documentação, classificação fiscal, anuência e conferência prévia."></textarea>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="caso5">5. Como o uso de sistemas digitais e a conferência documental prévia poderiam reduzir esse tipo de problema?</label>
+              <textarea class="form-control" id="caso5" data-save="textarea" placeholder="Explique a relação entre sistemas, dados corretos, gestão de riscos e prevenção de falhas."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mapa" class="section-band alt" aria-labelledby="mapa-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Atividade prática</span>
+          <h2 id="mapa-title">Mapa do controle aduaneiro</h2>
+          <p>Construa um mapa visual demonstrando como ocorre o controle aduaneiro em uma operação de comércio exterior, indicando os principais agentes, etapas, documentos, sistemas e riscos envolvidos.</p>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <div class="col-lg-5">
+            <div class="intro-card">
+              <h3 class="h5 fw-bold text-primary-emphasis">Formatos aceitos</h3>
+              <ul class="mb-4">
+                <li>PowerPoint, Canva ou Word.</li>
+                <li>Draw.io, Miro, Lucidchart ou Mermaid.</li>
+                <li>Papel, desde que digitalizado ou fotografado com boa qualidade.</li>
+              </ul>
+              <h3 class="h5 fw-bold text-primary-emphasis">Seu mapa deve indicar</h3>
+              <ul class="mb-0">
+                <li>Etapa do processo.</li>
+                <li>Órgão ou agente responsável.</li>
+                <li>Finalidade da etapa.</li>
+                <li>Sistema ou documento relacionado.</li>
+                <li>Risco caso haja falha.</li>
+                <li>Relação com importação ou exportação.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="flow-grid" aria-label="Etapas sugeridas para o mapa do controle aduaneiro">
+              <div class="flow-step"><strong>Negociação internacional</strong><span>Definição comercial e responsabilidades.</span></div>
+              <div class="flow-step"><strong>Preparação documental</strong><span>Fatura, packing list, contrato e documentos logísticos.</span></div>
+              <div class="flow-step"><strong>Embarque ou chegada</strong><span>Movimentação da mercadoria entre países.</span></div>
+              <div class="flow-step"><strong>Registro no sistema</strong><span>Inserção de dados no ambiente adequado.</span></div>
+              <div class="flow-step"><strong>Atuação da Receita</strong><span>Controle fiscal, aduaneiro e tributário.</span></div>
+              <div class="flow-step"><strong>Órgão anuente</strong><span>Verificação de exigência específica, se houver.</span></div>
+              <div class="flow-step"><strong>Análise documental</strong><span>Conferência de dados, valores e classificação.</span></div>
+              <div class="flow-step"><strong>Conferência física</strong><span>Inspeção da carga quando selecionada.</span></div>
+              <div class="flow-step"><strong>Tributos</strong><span>Recolhimento ou conferência, quando aplicável.</span></div>
+              <div class="flow-step"><strong>Correções</strong><span>Ajustes em inconsistências identificadas.</span></div>
+              <div class="flow-step"><strong>Liberação</strong><span>Desembaraço ou autorização de embarque.</span></div>
+              <div class="flow-step"><strong>Entrega e arquivo</strong><span>Finalização e guarda das informações.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="answer-panel">
+          <label class="form-label" for="mapaDescricao">Descrição do mapa do controle aduaneiro criado</label>
+          <textarea class="form-control" id="mapaDescricao" data-save="textarea" placeholder="Descreva a lógica do seu mapa, as etapas escolhidas, os agentes envolvidos, os documentos/sistemas e os principais riscos apontados."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section id="entrega" class="section-band" aria-labelledby="entrega-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Orientações de entrega</span>
+          <h2 id="entrega-title">Como entregar a atividade</h2>
+          <p>Esta atividade será incorporada ao Teams. A entrega poderá ser realizada via Chat do Teams ou no Teams da respectiva Unidade Curricular 10, conforme orientação do docente.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="intro-card">
+              <h3 class="h5 fw-bold text-primary-emphasis">O que entregar</h3>
+              <ol class="mb-0">
+                <li>Respostas das questões dissertativas.</li>
+                <li>Respostas das questões objetivas.</li>
+                <li>Resolução do estudo de caso.</li>
+                <li>Mapa do controle aduaneiro.</li>
+                <li>Breve justificativa explicando a lógica do mapa produzido.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="intro-card">
+              <h3 class="h5 fw-bold text-primary-emphasis">Cuidados na entrega</h3>
+              <ul class="mb-0">
+                <li>A entrega deve ter linguagem profissional.</li>
+                <li>As respostas devem ser próprias do aluno.</li>
+                <li>Consulte os materiais de apoio e fontes oficiais.</li>
+                <li>O mapa deve ser legível, organizado e coerente com as etapas da operação.</li>
+                <li>Demonstre compreensão sobre a função estratégica da alfândega.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="avaliacao" class="section-band alt" aria-labelledby="avaliacao-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Critérios de avaliação</span>
+          <h2 id="avaliacao-title">Como sua produção será analisada</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="criterion-card">
+              <span class="card-icon">1</span>
+              <h3>Compreensão da função da alfândega</h3>
+              <p>Avalia se o aluno reconhece a atuação da alfândega na fiscalização, controle, tributação e segurança das operações internacionais.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="criterion-card">
+              <span class="card-icon">2</span>
+              <h3>Identificação dos órgãos responsáveis</h3>
+              <p>Avalia se o aluno compreende o papel da Receita Federal, Portal Único Siscomex, órgãos anuentes e demais agentes envolvidos.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="criterion-card">
+              <span class="card-icon">3</span>
+              <h3>Relação com comércio exterior</h3>
+              <p>Avalia se o aluno conecta controle aduaneiro, importação, exportação, documentos, sistemas, fiscalização e liberação de mercadorias.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="criterion-card">
+              <span class="card-icon">4</span>
+              <h3>Análise de riscos aduaneiros</h3>
+              <p>Avalia se o aluno identifica impactos de irregularidades, divergências, atrasos, multas e falhas documentais ou regulatórias.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="criterion-card">
+              <span class="card-icon">5</span>
+              <h3>Organização do mapa</h3>
+              <p>Avalia clareza, sequência lógica, agentes envolvidos, sistemas, riscos e coerência do fluxo apresentado.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="criterion-card">
+              <span class="card-icon">6</span>
+              <h3>Clareza profissional</h3>
+              <p>Avalia linguagem, objetividade, apresentação visual e coerência das respostas.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band" aria-labelledby="acoes-title">
+      <div class="container">
+        <div class="activity-actions">
+          <div>
+            <h2 id="acoes-title" class="h5 fw-bold text-primary-emphasis mb-1">Ferramentas da atividade</h2>
+            <p class="status-message" id="statusMessage" aria-live="polite"></p>
+          </div>
+          <div class="action-buttons" aria-label="Botões de apoio">
+            <button class="btn btn-senac" type="button" id="saveDraft">Salvar rascunho</button>
+            <button class="btn btn-outline-senac" type="button" id="downloadTxt">Baixar respostas em TXT</button>
+            <button class="btn btn-ghost" type="button" id="printPage">Imprimir / PDF</button>
+            <button class="btn btn-outline-danger fw-bold" type="button" id="clearDraft">Limpar respostas</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band alt" aria-labelledby="referencias-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Referências</span>
+          <h2 id="referencias-title">Fontes utilizadas e indicadas</h2>
+        </div>
+        <ol class="references">
+          <li>BRASIL. Receita Federal. <strong>Aduana e Comércio Exterior</strong>. Brasília: Ministério da Fazenda, 2026. Disponível em: <a href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior" target="_blank" rel="noopener noreferrer">https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior</a>. Acesso em: 22 jun. 2026.</li>
+          <li>BRASIL. Receita Federal. <strong>Controle aduaneiro</strong>. Brasília: Ministério da Fazenda, 2026. Disponível em: <a href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/despacho-de-importacao/topicos-1/conceitos-e-definicoes/controle-aduaneiro" target="_blank" rel="noopener noreferrer">https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/despacho-de-importacao/topicos-1/conceitos-e-definicoes/controle-aduaneiro</a>. Acesso em: 22 jun. 2026.</li>
+          <li>BRASIL. Portal Único Siscomex. Brasília: Governo Federal. Disponível em: <a href="https://www.gov.br/siscomex/pt-br" target="_blank" rel="noopener noreferrer">https://www.gov.br/siscomex/pt-br</a>. Acesso em: 22 jun. 2026.</li>
+          <li>SOUZA, Tobias de Paula Lima; COSTA, Lucas Ayres. <strong>Estrutura e composição do comércio exterior brasileiro: entraves, tendências e debates acerca de uma agenda de política comercial</strong>. São Paulo: UNESP, 2023. Disponível em: <a href="http://www.inscricoes.fmb.unesp.br/upload/trabalhos/201853001718.pdf" target="_blank" rel="noopener noreferrer">http://www.inscricoes.fmb.unesp.br/upload/trabalhos/201853001718.pdf</a>. Acesso em: 22 jun. 2026.</li>
+          <li>SCORZA, Flavio Augusto Trevisan. <strong>O controle aduaneiro e a facilitação do comércio: efeitos das negociações multilaterais sobre a legislação brasileira</strong>. Florianópolis: Universidade Federal de Santa Catarina, 2022. Disponível em: <a href="https://repositorio.ufsc.br/handle/123456789/90630" target="_blank" rel="noopener noreferrer">https://repositorio.ufsc.br/handle/123456789/90630</a>. Acesso em: 22 jun. 2026.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-close">
+    <div class="container">
+      <p>Ao finalizar esta atividade, você terá construído uma visão integrada sobre a função estratégica da alfândega no comércio exterior, compreendendo que o controle aduaneiro contribui para a segurança, a legalidade, a arrecadação tributária, a proteção da economia nacional e a eficiência das operações internacionais.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const STORAGE_KEY = "uc10_alfandega_respostas_v1";
+    const textareas = Array.from(document.querySelectorAll("[data-save='textarea']"));
+    const radios = Array.from(document.querySelectorAll("[data-save='radio']"));
+    const statusMessage = document.getElementById("statusMessage");
+    let statusTimeout;
+    let autoSaveTimeout;
+
+    function showStatus(message) {
+      statusMessage.textContent = message;
+      clearTimeout(statusTimeout);
+      statusTimeout = setTimeout(() => {
+        statusMessage.textContent = "";
+      }, 3600);
+    }
+
+    function collectData() {
+      const data = {
+        textareas: {},
+        radios: {},
+        savedAt: new Date().toISOString()
+      };
+
+      textareas.forEach((field) => {
+        data.textareas[field.id] = field.value;
+      });
+
+      const radioGroups = [...new Set(radios.map((radio) => radio.name))];
+      radioGroups.forEach((groupName) => {
+        const checked = document.querySelector(`input[name="${groupName}"]:checked`);
+        data.radios[groupName] = checked ? checked.value : "";
+      });
+
+      return data;
+    }
+
+    function saveDraft(showMessage = true) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(collectData()));
+      if (showMessage) {
+        showStatus("Rascunho salvo com sucesso.");
+      }
+    }
+
+    function loadDraft() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return;
+
+      try {
+        const data = JSON.parse(saved);
+        Object.entries(data.textareas || {}).forEach(([id, value]) => {
+          const field = document.getElementById(id);
+          if (field) field.value = value;
+        });
+
+        Object.entries(data.radios || {}).forEach(([name, value]) => {
+          if (!value) return;
+          const radio = document.querySelector(`input[name="${name}"][value="${value}"]`);
+          if (radio) radio.checked = true;
+        });
+      } catch (error) {
+        console.warn("Não foi possível recuperar o rascunho salvo.", error);
+      }
+    }
+
+    function scheduleAutoSave() {
+      clearTimeout(autoSaveTimeout);
+      autoSaveTimeout = setTimeout(() => saveDraft(false), 800);
+    }
+
+    function getTextareaValue(id) {
+      const field = document.getElementById(id);
+      return field && field.value.trim() ? field.value.trim() : "[Sem resposta]";
+    }
+
+    function getRadioValue(name) {
+      const checked = document.querySelector(`input[name="${name}"]:checked`);
+      return checked ? checked.value : "[Não selecionada]";
+    }
+
+    function buildTxtContent() {
+      const now = new Date().toLocaleString("pt-BR");
+      return [
+        "UC10 - Comércio Exterior",
+        "Atividade: A Alfândega do Brasil e sua função estratégica no Comércio Exterior",
+        `Data de geração: ${now}`,
+        "",
+        "PARTE A - QUESTÕES DISSERTATIVAS",
+        "",
+        "Questão 1:",
+        getTextareaValue("discursiva1"),
+        "",
+        "Questão 2:",
+        getTextareaValue("discursiva2"),
+        "",
+        "Questão 3:",
+        getTextareaValue("discursiva3"),
+        "",
+        "PARTE B - QUESTÕES OBJETIVAS",
+        "",
+        `1. Alternativa selecionada: ${getRadioValue("qObj1")}`,
+        `2. Alternativa selecionada: ${getRadioValue("qObj2")}`,
+        `3. Alternativa selecionada: ${getRadioValue("qObj3")}`,
+        `4. Alternativa selecionada: ${getRadioValue("qObj4")}`,
+        `5. Alternativa selecionada: ${getRadioValue("qObj5")}`,
+        `6. Alternativa selecionada: ${getRadioValue("qObj6")}`,
+        "",
+        "ESTUDO DE CASO - MERCADORIA RETIDA NA ALFÂNDEGA",
+        "",
+        "1. Papel da alfândega:",
+        getTextareaValue("caso1"),
+        "",
+        "2. Riscos caso as divergências não sejam corrigidas:",
+        getTextareaValue("caso2"),
+        "",
+        "3. Órgãos ou agentes participantes:",
+        getTextareaValue("caso3"),
+        "",
+        "4. Cuidados antes do embarque:",
+        getTextareaValue("caso4"),
+        "",
+        "5. Uso de sistemas digitais e conferência prévia:",
+        getTextareaValue("caso5"),
+        "",
+        "ATIVIDADE PRÁTICA - MAPA DO CONTROLE ADUANEIRO",
+        "",
+        getTextareaValue("mapaDescricao"),
+        ""
+      ].join("\n");
+    }
+
+    function downloadTxt() {
+      saveDraft(false);
+      const blob = new Blob([buildTxtContent()], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "uc10-atividade-alfandega-respostas.txt";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      showStatus("Arquivo TXT gerado.");
+    }
+
+    function clearDraft() {
+      const confirmed = window.confirm("Deseja limpar apenas as respostas desta atividade?");
+      if (!confirmed) return;
+
+      localStorage.removeItem(STORAGE_KEY);
+      textareas.forEach((field) => {
+        field.value = "";
+      });
+      radios.forEach((radio) => {
+        radio.checked = false;
+      });
+      showStatus("Respostas limpas.");
+    }
+
+    document.getElementById("saveDraft").addEventListener("click", () => saveDraft(true));
+    document.getElementById("downloadTxt").addEventListener("click", downloadTxt);
+    document.getElementById("printPage").addEventListener("click", () => window.print());
+    document.getElementById("clearDraft").addEventListener("click", clearDraft);
+
+    textareas.forEach((field) => field.addEventListener("input", scheduleAutoSave));
+    radios.forEach((radio) => radio.addEventListener("change", scheduleAutoSave));
+
+    loadDraft();
+  </script>
+</body>
+</html>
